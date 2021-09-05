@@ -8,12 +8,26 @@ const Home = () => {
 
   const [favChannels, setFavChannels] = useState([]);
   
-  const addStreamChannel = event => {
+  const addStreamChannel = async event => {
   event.preventDefault()
 
   const { value } = event.target.elements.name
 
   setFavChannels(prevState => [...prevState, value])
+
+  const path = `https://${window.location.hostname}`
+
+  const response = await fetch (`${path}/api/twitch`, {
+    method: 'POST', 
+    headers: {
+      'Content-Type': 'application/json'
+    }, 
+    body: JSON.stringify({ data: value})
+  })
+
+  const json = await response.json()
+
+  console.log(json.data)
 
   console.log("value: ", value)
 
