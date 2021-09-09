@@ -1,3 +1,3 @@
-import StreamerGrid from 'StreamerGrid';
+import StreamerGrid from './StreamerGrid';
 
 export default StreamerGrid;
