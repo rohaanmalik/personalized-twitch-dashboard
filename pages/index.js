@@ -14,7 +14,6 @@ const Home = () => {
 
       const { value } = event.target.elements.name
 
-
       const path = `https://${window.location.hostname}`
 
       const response = await fetch(`${path}/api/twitch`, {
@@ -27,11 +26,7 @@ const Home = () => {
 
       const json = await response.json()
 
-      setFavChannels(prevState => [...prevState, value])
-
-      console.log(json.data)
-
-      console.log("value: ", value)
+      setFavChannels(prevState => [...prevState, json.data])
   }
 
 

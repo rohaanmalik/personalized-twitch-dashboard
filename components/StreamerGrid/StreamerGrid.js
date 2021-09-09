@@ -1,8 +1,11 @@
 import React from 'react';
+import Image from 'next/image';
+import styles from '../../styles/StreamerGrid.module.css';
 
 const StreamerGrid = ({ channels }) => {
 
   const renderGridItem = channel => {
+    {console.log("the channel is: ", channel)}
     <div key={channel.id} className={styles.gridItem}>
       <Image layout="fill" src={channel.thumbnail_url} />
       <div classnName={styles.gridItemContent}>
@@ -15,8 +18,8 @@ const StreamerGrid = ({ channels }) => {
 
 
   return (<div>
-    <p> Hello StreamerGrid </p>
-    {channels.map((item,i) => <li key={i}>{item}</li>)}
+    <h2> Welcome to Rohaan's Dashboard 😍</h2>
+    {channels.map(renderGridItem)}
     </div>)
 }
 

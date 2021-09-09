@@ -44,7 +44,6 @@ const getTwitchChannel = async channelName => {
 
       if (json.data) {
         const { data } = json;
-        console.log("REACHED HEREEEEEEEEEEEE")
         const lowercaseChannelName = channelName.toLowerCase()
 
         const foundChannel = data.find(
@@ -53,7 +52,6 @@ const getTwitchChannel = async channelName => {
 
             return lowercaseChannelName === lowerCaseDisplayName
           })
-          // console.log(" FOUND CHANNEL ", foundChannel)
           return foundChannel;
       }
     }
