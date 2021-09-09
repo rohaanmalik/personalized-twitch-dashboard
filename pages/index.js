@@ -17,7 +17,7 @@ const Home = () => {
 
   const path = `https://${window.location.hostname}`
 
-  const response = await fetch (`${path}/api/twitch`, {
+  const response = await fetch(`${path}/api/twitch`, {
     method: 'POST', 
     headers: {
       'Content-Type': 'application/json'

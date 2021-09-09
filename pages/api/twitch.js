@@ -16,7 +16,6 @@ export default async (req, res) => {
       } else {
         res.status(404).json({ data })
       }
-
     }
   } catch (error) {
     res.status(500).json({data: 'Welcome to Twitch API!'})
