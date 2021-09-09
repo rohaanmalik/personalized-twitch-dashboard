@@ -10,28 +10,28 @@ const Home = () => {
   const [favChannels, setFavChannels] = useState([]);
   
   const addStreamChannel = async event => {
-  event.preventDefault()
+      event.preventDefault()
 
-  const { value } = event.target.elements.name
+      const { value } = event.target.elements.name
 
-  setFavChannels(prevState => [...prevState, value])
 
-  const path = `https://${window.location.hostname}`
+      const path = `https://${window.location.hostname}`
 
-  const response = await fetch(`${path}/api/twitch`, {
-    method: 'POST', 
-    headers: {
-      'Content-Type': 'application/json'
-    }, 
-    body: JSON.stringify({ data: value})
-  })
+      const response = await fetch(`${path}/api/twitch`, {
+        method: 'POST', 
+        headers: {
+          'Content-Type': 'application/json'
+        }, 
+        body: JSON.stringify({ data: value})
+      })
 
-  const json = await response.json()
+      const json = await response.json()
 
-  console.log(json.data)
+      setFavChannels(prevState => [...prevState, value])
 
-  console.log("value: ", value)
+      console.log(json.data)
 
+      console.log("value: ", value)
   }
 
 
@@ -55,8 +55,7 @@ const Home = () => {
       </Head>
       <div className={styles.inputContainer}>
       {renderHome()}
-      <StreamerGrid />
-      <div>{favChannels.join(",")}</div>
+      <StreamerGrid channels={favChannels} />
       </div>
     </div>
   )

@@ -14,22 +14,44 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  min-width: 150px;
-  max-width: 250px;
-  min-height: 250px;
-  max-height: 300px;
+  width: 180px;
+  height: 180px;
   border-radius: 10px;
   border: 4px #7F53ACCC solid;
   background-color: #00000080;
   color: white;
   font-size: 14px;
   margin-right: 1em;
+  position: relative;
+  overflow: hidden;
 }
 
 .gridItem button {
-  width: 75%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background-color: #00000080;
+  text-align: center;
+  bottom: 0;
+  padding: 5px;
   height: 30px;
   border-radius: 10px;
   border: 0;
   margin: 1em;
+}
+
+.gridItem p {
+  margin: 0;
+}
+
+.gridItem p:first-child {
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 5 px;
+}
+
+.gridItem p:last-child {
+  font-size: 12px;
 }
