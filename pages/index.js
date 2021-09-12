@@ -51,6 +51,7 @@ const Home = () => {
       <div className={styles.inputContainer}>
       {renderHome()}
       <StreamerGrid channels={favChannels} />
+      {console.log("fav channels", favChannels)}
       </div>
     </div>
   )
